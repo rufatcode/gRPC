@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "8bOzMvVctxgDmv5zH1LAyMAQ1Xuk36BKtLEcJstNk93OdZ2xRnTuV5SkG1NFdabfYhXquMHFFBMvS7HP3UTtBQ==",
+  "success": true,
+  "projectFilePath": "/Volumes/Mac/Advance-C#/gRPC/grpcClient/grpcClient.csproj",
+  "expectedPackageFiles": [
+    "/Users/rufat/.nuget/packages/google.protobuf/3.26.0/google.protobuf.3.26.0.nupkg.sha512",
+    "/Users/rufat/.nuget/packages/grpc.core.api/2.61.0/grpc.core.api.2.61.0.nupkg.sha512",
+    "/Users/rufat/.nuget/packages/grpc.net.client/2.61.0/grpc.net.client.2.61.0.nupkg.sha512",
+    "/Users/rufat/.nuget/packages/grpc.net.common/2.61.0/grpc.net.common.2.61.0.nupkg.sha512",
+    "/Users/rufat/.nuget/packages/grpc.tools/2.62.0/grpc.tools.2.62.0.nupkg.sha512",
+    "/Users/rufat/.nuget/packages/microsoft.extensions.logging.abstractions/6.0.0/microsoft.extensions.logging.abstractions.6.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

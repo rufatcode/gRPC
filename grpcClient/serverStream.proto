@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option csharp_namespace = "grpcStreamServer";
+
+package serverStream;
+
+service Email {
+  rpc SendMessage (stream EmailRequest) returns (EmailResponse);
+}
+message EmailRequest {
+  string name = 1;
+  string message=2;
+}
+
+message EmailResponse {
+  string message = 1;
+}

@@ -1,0 +1,2 @@
+obj/Debug/net7.0/Connection.cs \
+obj/Debug/net7.0/ConnectionGrpc.cs: connection.proto

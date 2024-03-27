@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option csharp_namespace = "grpcInfoServer";
+
+package info;
+
+service Information {
+  rpc RecieveInfo (InfoRequest) returns (stream InfoResponse);
+}
+message InfoRequest {
+  string name = 1;
+  bool position=2;
+}
+
+message InfoResponse {
+  string message = 1;
+}

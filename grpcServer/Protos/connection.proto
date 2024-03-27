@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option csharp_namespace = "grpcConnectionServer";
+
+package connectionServer;
+
+service Connection {
+  rpc Connect (stream ConnectionRequest) returns (stream ConnectionResponse);
+}
+message ConnectionRequest {
+  string name = 1;
+  string message=2;
+}
+
+message ConnectionResponse {
+  string name=1;
+  string message = 2;
+
+}
