@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+option csharp_namespace = "grpcFileClient";
+import "google/protobuf/empty.proto";
+package fileServer;
+
+service FileProses {
+  rpc FileUpload (stream BytesContent) returns (google.protobuf.Empty);
+  rpc FileDownLoad (FileInfo) returns (stream BytesContent);
+}
+message FileInfo {
+  string fileName = 1;
+  string fileExtention=2;
+}
+
+message BytesContent {
+  int64 fileSize=1;
+  bytes buffer = 2;
+  FileInfo info=3;
+  int32 readByte=4;
+
+}

@@ -32,3 +32,4 @@
 /Volumes/Mac/Advance-C#/gRPC/grpcServer/obj/Debug/net7.0/grpcServer.pdb
 /Volumes/Mac/Advance-C#/gRPC/grpcServer/obj/Debug/net7.0/grpcServer.genruntimeconfig.cache
 /Volumes/Mac/Advance-C#/gRPC/grpcServer/obj/Debug/net7.0/ref/grpcServer.dll
+/Volumes/Mac/Advance-C#/gRPC/grpcServer/bin/Debug/net7.0/grpcServer.staticwebassets.runtime.json

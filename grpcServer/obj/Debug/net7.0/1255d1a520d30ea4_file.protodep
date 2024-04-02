@@ -1,0 +1,3 @@
+obj/Debug/net7.0/Protos/File.cs \
+obj/Debug/net7.0/Protos/FileGrpc.cs: /Users/rufat/.nuget/packages/grpc.tools/2.49.0/build/native/include/google/protobuf/empty.proto\
+ Protos/file.proto

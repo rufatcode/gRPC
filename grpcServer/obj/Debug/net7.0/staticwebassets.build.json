@@ -1,11 +1,19 @@
 {
   "Version": 1,
-  "Hash": "951bj/GqbsC4/hR1xILMMX7b7QRfzeGMfZ8sIXwigRk=",
+  "Hash": "mMmjJZQv5vM/kV0ZxbpOCx5SKBwKcTOYicDuyHV9DFU=",
   "Source": "grpcServer",
   "BasePath": "_content/grpcServer",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "grpcServer/wwwroot",
+      "Source": "grpcServer",
+      "ContentRoot": "/Volumes/Mac/Advance-C#/gRPC/grpcServer/wwwroot/",
+      "BasePath": "_content/grpcServer",
+      "Pattern": "**"
+    }
+  ],
   "Assets": []
 }

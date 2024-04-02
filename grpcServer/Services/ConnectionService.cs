@@ -23,7 +23,7 @@ namespace grpcConnectionServer.Services
         //    };
         //}
 
-        //Client Stream
+        //Server Stream
 
         //public override async Task Connect(ConnectionRequest request, IServerStreamWriter<ConnectionResponse> responseStream, ServerCallContext context)
         //{
@@ -36,7 +36,7 @@ namespace grpcConnectionServer.Services
 
         //}
 
-        //Server Stream
+        //Client Stream
 
         //public override async Task<ConnectionResponse> Connect(IAsyncStreamReader<ConnectionRequest> requestStream, ServerCallContext context)
         //{

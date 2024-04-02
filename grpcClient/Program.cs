@@ -3,18 +3,41 @@ using Grpc.Net.Client;
 using grpcMessageClient;
 using grpcInfoClient;
 using grpcServer;
-using Grpc.Core;
 using grpcStreamServer;
 using grpcBiDirectioanlarStream;
 using grpcConnectionClient;
+using grpcFileClient;
+using Google.Protobuf;
 
 var channal = GrpcChannel.ForAddress("http://localhost:5052");
 //await CallGreater();
 //await CallMessage();
 //await CallInfo();
-//await ServerStream();
+//await ClientStream();
 //await BiDerecionalStream();
-await Connection();
+//await Connection();
+await Upload();
+async Task Upload()
+{
+    var grpcClient = new FileProses.FileProsesClient(channal);
+    string path = @"/Volumes/PC and Mac /Records/Test1.mov";
+    using FileStream fileStream = new(path, FileMode.Open);
+    byte[] buffer = new byte[2048];
+    BytesContent bytesContent = new()
+    {
+        FileSize=fileStream.Length,
+        ReadByte=0,
+        Info=new grpcFileClient.FileInfo() { FileName=Path.GetFileNameWithoutExtension(fileStream.Name),FileExtention=Path.GetExtension(fileStream.Name)}
+    };
+    var upload = grpcClient.FileUpload();
+    while ((bytesContent.ReadByte=await fileStream.ReadAsync(buffer,0,buffer.Length))>0)
+    {
+        bytesContent.Buffer = ByteString.CopyFrom(buffer);
+        await upload.RequestStream.WriteAsync(bytesContent);
+    }
+   await  upload.RequestStream.CompleteAsync();
+    fileStream.Close();
+}
 async Task CallGreater()
 {
     
@@ -45,7 +68,7 @@ async Task CallInfo()
 
 }
 
-async Task ServerStream()
+async Task ClientStream()
 {
     var infoClient = new Email.EmailClient(channal);
     var resoult = infoClient.SendMessage();
@@ -94,7 +117,7 @@ async Task Connection()
     //Console.WriteLine($"Meesage:{resoult.Message}|Name:{resoult.Name}");
 
 
-    //Client Stream
+    //Server Stream
 
 
     //var connectionClient = new Connection.ConnectionClient(channal);
@@ -107,7 +130,7 @@ async Task Connection()
     //}
 
 
-    //Server stream
+    //Client stream
 
     //var connectionClient = new Connection.ConnectionClient(channal);
     //var resoult = connectionClient.Connect();
@@ -148,4 +171,21 @@ async Task Connection()
     await request;
     await resoult.RequestStream.CompleteAsync();
     await response;
+}
+Temp(Demo.First&Demo.Last);
+void Temp(Demo demo)
+{
+    if ((int)demo==1)
+    {
+        Console.WriteLine("1");
+    }
+    if ((int)demo==2)
+    {
+        Console.WriteLine("2");
+    }
+}
+enum Demo
+{
+    First=1,
+    Last,
 }

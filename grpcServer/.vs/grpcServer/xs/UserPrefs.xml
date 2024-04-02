@@ -1,23 +1,26 @@
 ﻿<Properties StartupConfiguration="{F3E5E8DA-EA33-4E84-9689-6409807CECE4}|https">
-  <MonoDevelop.Ide.ItemProperties.grpcServer PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Services/ConnectionService.cs">
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workbench ActiveDocument="Services/FileService.cs">
     <Files>
-      <File FileName="Program.cs" Line="6" Column="27" />
-      <File FileName="grpcServer.csproj" Line="17" Column="41" />
-      <File FileName="Properties/launchSettings.json" />
-      <File FileName="Services/ServerStreamService.cs" Line="2" Column="1" />
-      <File FileName="Protos/connection.proto" Line="8" Column="57" />
-      <File FileName="Services/ConnectionService.cs" Line="75" Column="28" />
+      <File FileName="grpcServer.csproj" Line="17" Column="34" />
+      <File FileName="Properties/launchSettings.json" Line="1" Column="1" />
+      <File FileName="Protos/file.proto" Line="17" Column="17" />
+      <File FileName="Services/FileService.cs" Line="56" Column="14" />
+      <File FileName="Program.cs" Line="27" Column="31" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="grpcServer" expanded="True">
-            <Node name="grpcServer" expanded="True">
-              <Node name="Properties" expanded="True" />
+          <Node name="grpcServer">
+            <Node name="grpcServer">
               <Node name="Protos" expanded="True" />
               <Node name="Services" expanded="True">
-                <Node name="ConnectionService.cs" selected="True" />
+                <Node name="FileService.cs" selected="True" />
               </Node>
             </Node>
           </Node>
@@ -25,10 +28,5 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.grpcServer PreferredExecutionTarget="/Applications/Google Chrome.app" />
 </Properties>
