@@ -1,0 +1,33 @@
+{
+  "Files": [
+    {
+      "Id": "/Volumes/Mac/Advance-C#/gRPC/grpcServer/wwwroot/.DS_Store",
+      "PackagePath": "staticwebassets/.DS_Store"
+    },
+    {
+      "Id": "/Volumes/Mac/Advance-C#/gRPC/grpcServer/wwwroot/files/.DS_Store",
+      "PackagePath": "staticwebassets/files/.DS_Store"
+    },
+    {
+      "Id": "/Volumes/Mac/Advance-C#/gRPC/grpcServer/wwwroot/files/Test1.mov",
+      "PackagePath": "staticwebassets/files/Test1.mov"
+    },
+    {
+      "Id": "obj/Debug/net7.0/staticwebassets/msbuild.build.grpcServer.props",
+      "PackagePath": "build\\grpcServer.props"
+    },
+    {
+      "Id": "obj/Debug/net7.0/staticwebassets/msbuild.buildMultiTargeting.grpcServer.props",
+      "PackagePath": "buildMultiTargeting\\grpcServer.props"
+    },
+    {
+      "Id": "obj/Debug/net7.0/staticwebassets/msbuild.buildTransitive.grpcServer.props",
+      "PackagePath": "buildTransitive\\grpcServer.props"
+    },
+    {
+      "Id": "obj/Debug/net7.0/staticwebassets/msbuild.grpcServer.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

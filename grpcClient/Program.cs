@@ -8,6 +8,7 @@ using grpcBiDirectioanlarStream;
 using grpcConnectionClient;
 using grpcFileClient;
 using Google.Protobuf;
+using Google.Protobuf.WellKnownTypes;
 
 var channal = GrpcChannel.ForAddress("http://localhost:5052");
 //await CallGreater();
@@ -16,7 +17,8 @@ var channal = GrpcChannel.ForAddress("http://localhost:5052");
 //await ClientStream();
 //await BiDerecionalStream();
 //await Connection();
-await Upload();
+//await Upload();
+await Download();
 async Task Upload()
 {
     var grpcClient = new FileProses.FileProsesClient(channal);
@@ -36,6 +38,38 @@ async Task Upload()
         await upload.RequestStream.WriteAsync(bytesContent);
     }
    await  upload.RequestStream.CompleteAsync();
+    fileStream.Close();
+}
+async Task Download()
+{
+    var grpcClient = new FileProses.FileProsesClient(channal);
+    var request = grpcClient.FileDownLoad(new grpcFileClient.FileInfo { FileExtention = ".mov", FileName = "Test1" });
+    FileStream fileStream = null;
+    string path = @"/Volumes/Mac/Advance-C#/gRPC/grpcClient/Files";
+    if (!Directory.Exists(path))
+        Directory.CreateDirectory(path);
+    CancellationToken cancellationToken = new();
+    int count = 0;
+    decimal chankSize = 0;
+    try
+    {
+        while (await request.ResponseStream.MoveNext(cancellationToken))
+        {
+            if (count++ == 0)
+            {
+                fileStream = new FileStream(Path.Combine(path, request.ResponseStream.Current.Info.FileName + request.ResponseStream.Current.Info.FileExtention), FileMode.CreateNew);
+                fileStream.SetLength(request.ResponseStream.Current.FileSize);
+            }
+            var buffer = request.ResponseStream.Current.Buffer.ToByteArray();
+            await fileStream.WriteAsync(buffer, 0, request.ResponseStream.Current.ReadByte);
+            Console.WriteLine($"{Math.Round((chankSize += request.ResponseStream.Current.ReadByte * 100) / request.ResponseStream.Current.FileSize)}%");
+
+        }
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine(ex.Message);
+    }
     fileStream.Close();
 }
 async Task CallGreater()

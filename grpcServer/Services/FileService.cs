@@ -17,24 +17,25 @@ namespace grpcFileServer.Services
         public override async Task<Empty> FileUpload(IAsyncStreamReader<BytesContent> requestStream, ServerCallContext context)
         {
             string path = Path.Combine(_webHostEnvironment.WebRootPath, "files");
-            if (Directory.Exists(path))
+            if (!Directory.Exists(path))
                 Directory.CreateDirectory(path);
 
-            FileStream fileStream = null;
+             FileStream fileStream = null;
             try
             {
+                int count = 0;
                 decimal chankSize = 0;
                 while (await requestStream.MoveNext(context.CancellationToken))
                 {
-                    int count = 0;
+                    
                     if (count++==0)
                     {
-                        fileStream = new(Path.Combine(path, requestStream.Current.Info.FileName+"."+requestStream.Current.Info.FileExtention), FileMode.CreateNew);
+                        fileStream = new(Path.Combine(path, requestStream.Current.Info.FileName+requestStream.Current.Info.FileExtention), FileMode.CreateNew);
                         fileStream.SetLength(requestStream.Current.FileSize);
                     }
                     var buffer = requestStream.Current.Buffer.ToByteArray();
                     await fileStream.WriteAsync(buffer, 0, buffer.Length);
-                    Console.WriteLine($"{Math.Round(chankSize+=requestStream.Current.ReadByte*100)/100}");
+                    Console.WriteLine($"{Math.Round((chankSize+=requestStream.Current.ReadByte*100)/requestStream.Current.FileSize)}%");
                 }
                 
             }
@@ -48,7 +49,7 @@ namespace grpcFileServer.Services
         }
         public override async Task FileDownLoad(FileInfo request, IServerStreamWriter<BytesContent> responseStream, ServerCallContext context)
         {
-            string path = Path.Combine(_webHostEnvironment.WebRootPath, request.FileName + "." + request.FileExtention);
+            string path = Path.Combine(_webHostEnvironment.WebRootPath,"files", request.FileName +request.FileExtention);
             using FileStream fileStream = new(path, FileMode.Open, FileAccess.Read);
             byte[] buffer = new byte[2048];
             BytesContent bytesContent = new()
@@ -62,6 +63,7 @@ namespace grpcFileServer.Services
                 bytesContent.Buffer = ByteString.CopyFrom(buffer);
                 await responseStream.WriteAsync(bytesContent);
             }
+            
             fileStream.Close();
         }
 

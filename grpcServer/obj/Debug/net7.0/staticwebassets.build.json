@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "mMmjJZQv5vM/kV0ZxbpOCx5SKBwKcTOYicDuyHV9DFU=",
+  "Hash": "3SnteTEWjx/BcfOjeoG7ZmhyEzwHAeCSLQ6FLTX0JYw=",
   "Source": "grpcServer",
   "BasePath": "_content/grpcServer",
   "Mode": "Default",
@@ -15,5 +15,57 @@
       "Pattern": "**"
     }
   ],
-  "Assets": []
+  "Assets": [
+    {
+      "Identity": "/Volumes/Mac/Advance-C#/gRPC/grpcServer/wwwroot/.DS_Store",
+      "SourceId": "grpcServer",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Volumes/Mac/Advance-C#/gRPC/grpcServer/wwwroot/",
+      "BasePath": "_content/grpcServer",
+      "RelativePath": ".DS_Store",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/.DS_Store"
+    },
+    {
+      "Identity": "/Volumes/Mac/Advance-C#/gRPC/grpcServer/wwwroot/files/.DS_Store",
+      "SourceId": "grpcServer",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Volumes/Mac/Advance-C#/gRPC/grpcServer/wwwroot/",
+      "BasePath": "_content/grpcServer",
+      "RelativePath": "files/.DS_Store",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/files/.DS_Store"
+    },
+    {
+      "Identity": "/Volumes/Mac/Advance-C#/gRPC/grpcServer/wwwroot/files/Test1.mov",
+      "SourceId": "grpcServer",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Volumes/Mac/Advance-C#/gRPC/grpcServer/wwwroot/",
+      "BasePath": "_content/grpcServer",
+      "RelativePath": "files/Test1.mov",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/files/Test1.mov"
+    }
+  ]
 }
